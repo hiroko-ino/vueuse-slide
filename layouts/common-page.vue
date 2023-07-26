@@ -37,7 +37,7 @@
   content: "";
   width: 1.5rem;
   height: 3px;
-  background-color: #333;
+  background-color: #ddd;
   position: relative;
   top: 2px;
   margin-right: 0.5rem;
@@ -90,7 +90,6 @@
 
 ::v-deep(table th) {
   border: 1px solid #ccc;
-  background-color: rgb(203, 225, 225);
   padding: 0.4rem;
   width: 7rem;
 }

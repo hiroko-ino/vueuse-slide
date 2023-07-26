@@ -4,12 +4,12 @@ highlighter: shiki
 lineNumbers: false
 drawings:
   persist: false
-title: v10.0突破記念、VueUseで手軽にWeb APIを触り、アイデアを実現しよう🥳
+title: v10.0突破記念！VueUseで手軽にWeb APIを実験してみよう🥳
 fonts:
   sans: 'Noto Sans JP'
 ---
 
-# v10.0突破記念、<br>VueUseで手軽にWeb APIを触り、アイデアを実現しよう🥳
+# v10.0突破記念！<br>VueUseで手軽にWeb APIを<br>実験してみよう🥳
 
 ## + デモ on Slidev
 
@@ -38,6 +38,10 @@ fonts:
   }
 </style>
 
+<!--
+はい、それではv10.0突破記念！VueUseで手軽にWeb APIを実験してみよう🥳という題で登壇させていただきます、よろしくお願いします
+-->
+
 ---
 transition: slide-left
 ---
@@ -47,30 +51,40 @@ transition: slide-left
 猪野 浩子 - hiroko_ino
 
 <ul class="common-list">
-  <li>9年間Web制作でデザインとエンジニアをしていて、昨年8月転職</li>
-  <li>スポーツアプリの会社のフロントエンドエンジニア</li>
-  <li>Vue.jsとFlutterを書いている</li>
+  <li>9年間Web制作でデザイナーとエンジニアをし、昨年8月転職してスポーツアプリの会社でVue.jsとFlutterを書いている</li>
+  <li>湘南に生息</li>
+  <li>3度の飯よりゲームのRTA（Speedrun）が好き</li>
 </ul>
 
 <ul class="sns-list">
   <li>
-    <img src="/sns/twitter.png" alt="Twitter">
-    @uribou_studying
+    <a href="https://twitter.com/uribou_studying" target="_blank">
+      <img src="/sns/twitter.png" alt="Twitter">
+      @uribou_studying
+    </a>
   </li>
   <li>
-    <img src="/sns/github.png" alt="GitHub">
-    hiroko-ino
+    <a href="https://github.com/hiroko-ino" target="_blank">
+      <img src="/sns/github.png" alt="GitHub">
+      hiroko-ino
+    </a>
   </li>
   <li>
-    <img src="/sns/zenn.svg" alt="Zenn">
-    https://zenn.dev/hiroko_ino
+    <a href="https://zenn.dev/hiroko_ino" target="_blank">
+      <img src="/sns/zenn.svg" alt="Zenn">
+      https://zenn.dev/hiroko_ino
+    </a>
   </li>
   <li>
-    自作ブログ：https://type-any.com/
+    ブログ：
+    <a href="https://type-any.com/" target="_blank">
+      https://type-any.com/
+    </a>
   </li>
 </ul>
 
-<img class="side" src="/uribou.jpg" alt="うりぼうくん">
+<img class="side side--l" src="/profile.jpg" alt="リアル写真">
+<img class="side side--r" src="/uribou.jpg" alt="うりぼうくん">
 
 <style>
 .slidev-layout {
@@ -108,7 +122,7 @@ p {
 }
 
 .common-list li {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   line-height: 1.7;
 }
 
@@ -124,6 +138,27 @@ p {
   height: 13rem;
 }
 
+.side {
+  position: absolute;
+}
+
+.side--l {
+  width: 13rem;
+  height: 13rem;
+  right: 2rem;
+  bottom: 1rem;
+  border-radius: 16px;
+}
+
+.side--r {
+  width: 7rem;
+  height: 7rem;
+  right: 11rem;
+  bottom: 10rem;
+  border-radius: 50%;
+  border: 3px solid #eee;
+}
+
 .sns-list {
   margin-top: 2.5rem;
   padding-left: 2.2rem;
@@ -131,9 +166,13 @@ p {
 
 .sns-list li {
   font-size: 1.2rem;
-  display: flex;
-  align-items: center;
   line-height: 1.7;
+}
+
+.sns-list li a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: underline;
 }
 
 .sns-list li img {
@@ -143,19 +182,13 @@ p {
 }
 </style>
 
----
-layout: index-page
----
-
-# アジェンダ
-
-- このスライドの説明
-- VueUseとは
-- VueUseで扱われているWeb APIとその関数紹介
-  - デモ
-  - コード紹介
-  - VueUseを使う利点
-- おわりに
+<!--
+自己紹介します
+猪野と申します、SNS類は本名そのままのhiroko_inoという名前でやっています。
+9年間web制作でデザイナーとエンジニアをやっていて、去年8月に転職して今はスポーツアプリの会社でVue.jsとFlutterを書いています。
+湘南に生息しています。
+3度の飯よりRTA（speedrun）が好きです。
+-->
 
 ---
 layout: index-page
@@ -163,7 +196,7 @@ layout: index-page
 
 # アジェンダ
 
-- **このスライドの説明**
+- 今日伝えたいこと
 - VueUseとは
 - VueUseで扱われているWeb APIとその関数紹介
   - デモ
@@ -171,10 +204,33 @@ layout: index-page
   - VueUseを使う利点
 - おわりに
 
+<!--
+アジェンダはこのようになります。
+-->
+
+---
+layout: index-page
+---
+
+# アジェンダ
+
+- **今日伝えたいこと**
+- VueUseとは
+- VueUseで扱われているWeb APIとその関数紹介
+  - デモ
+  - コード紹介
+  - VueUseを使う利点
+- おわりに
+
+<!--
+今日伝えたいことです。
+-->
+
 ---
 ---
 
-突然ですが、みなさん  
+みなさん、VueUse  
+使ったことありますか？
 
 <style>
   .slidev-layout {
@@ -192,44 +248,58 @@ layout: index-page
   }
 </style>
 
----
----
-
-ものづくり🔧のアイデアに  
-困っていませんか？
-
-<style>
-  .slidev-layout {
-    background-color: #41B883;
-    border-right: 20px solid #35495E;
-    color: white;
-    display: grid;
-    place-items: center;
-    text-align: center;
-  }
-
-  p {
-    font-size: 3rem;
-    font-weight: 700;
-  }
-</style>
+<!--
+みなさん、VueUse使ったことありますか？
+-->
 
 ---
 layout: common-page
 ---
 
-# アイデアに困っているなら、VueUseが助けになるかもしれません
+# VueUseには、たくさんの関数があります
 
-- VueUseはコンポーザブルな関数を200以上公開しています
+- VueUseはコンポーザブルな関数の集合
+- 関数を200以上公開しています
 - その中には実験的なWeb APIやEventを扱うもの、いろんな操作を便利にする独自の関数などがあります
-
-関数一覧を眺めているだけで、アイデアが得られる！💪
 
 <style>
   p {
     font-size: 1.7rem;
   }
 </style>
+
+<!--
+VueUseには、たくさんの関数があります。
+VueUseはコンポーザブルな関数の集合です。
+関数を200以上公開しています。
+その中には実験的なWeb APIやEventを扱うもの、色んな操作を便利にする独自の関数などがあります。
+-->
+
+---
+layout: common-page
+---
+
+# 今日の内容は、VueUse × Web API
+
+- VueUseの関数から様々な（実験的含む）Web APIの存在を知ろう    
+- VueUseの実際のコードや、内部で扱われている関数、便利さを理解する
+- Slidev上のデモを楽しむ
+
+今回はサードパーティ API（普段アプリケーション開発でサーバーから叩いているもの）の話はありません🙅‍♀🙇‍♀️
+
+<style>
+  p {
+    font-size: 1.7rem;
+  }
+</style>
+
+<!--
+今日の登壇はVueUseの中でWeb APIを扱うものを取り上げます。
+
+VueUseのたくさんの関数の中から、実験的含むWeb APIを扱う関数をピックアップし、Web APIと内部で扱われている関数を速習します。
+
+今回は、サードパーティAPI、普段アプリケーション開発でサーバーから叩いているものの話はありません。
+-->
 
 ---
 layout: common-page
@@ -238,7 +308,7 @@ layout: common-page
 # 例えばこんなことが出来ます💡
 
 useEyeDropper(EyeDropper API)とuseClipboard(Clipboard API)  
-Vueファイルは35行（最小構成だと13行ほど）
+Vueファイルは35行（スタイル等なし最小構成だと13行ほど）
 
 <div class="w-130 m-auto relative">
   <ColorPicker />
@@ -251,38 +321,27 @@ Vueファイルは35行（最小構成だと13行ほど）
   }
 </style>
 
----
----
-
-このスライドは  
-VueUseでWeb APIを触り、    
-デモをするスライドです
-
-<style>
-  .slidev-layout {
-    background-color: #41B883;
-    border-right: 20px solid #35495E;
-    color: white;
-    display: grid;
-    place-items: center;
-    text-align: center;
-  }
-
-  p {
-    font-size: 2.4rem;
-    font-weight: 700;
-  }
-</style>
+<!--
+例えばこのようなことが出来るという例で、useEyeDropperというEyeDropper APIを扱う関数と、useClipboardというClipboard APIを扱う関数を使い、このようなカラーコードをコピーできるカラーピッカーが作れます。こちらはVueファイルが35行ほどで、スタイルなし最小構成だと13行ほどになります。
+-->
 
 ---
 layout: common-page
 ---
 
-# この登壇を見てくれた人に持ち帰ってもらえるとうれしいこと
+# 本日持ち帰ってほしいこと🐤
 
 - 自分もVueUseでなにか作ってみよう！の気持ち
-- VueUseの便利さ
+- VueUseの便利さ、VueUseへの興味
 - 実験的なWeb APIの面白さ
+
+<!--
+本日持ち帰ってほしいことはこのようになっています。
+- 自分もVueUseでなにか作ってみよう！の気持ち
+- VueUseの便利さ、VueUseへの興味
+- 実験的なWeb APIの面白さ
+です。
+-->
 
 ---
 transition: slide-left
@@ -290,7 +349,10 @@ transition: slide-left
 
 # 本題の前に…
 
-今回のライブデモはこちらでも見れます  
+今回のデモはこちらでも見れます  
+<a href="https://hiroko-ino.github.io/7_27_vue_slide_entrance/" target="_blank">https://hiroko-ino.github.io/7_27_vue_slide_entrance/</a>
+
+<img class="mt-10 block m-auto" src="/qr.png" alt="QRコード">
 
 <style>
 .slidev-layout {
@@ -323,19 +385,29 @@ p {
 }
 </style>
 
+<!--
+本題の前に、今回のデモはこちらでも見れます。
+QRコードを読み取りたい方のために今から15秒ほど待ちます。
+ツイッターでもこちらのリンクをツイートしていますので、そちらから辿っていただくほうがいいかもしれません。私のTwitterはconnpassページから飛べるようになっているはずです。（少し待つ）
+-->
+
 ---
 layout: index-page
 ---
 
 # アジェンダ
 
-- このスライドの説明
+- 今日伝えたいこと
 - **VueUseとは**
 - VueUseで扱われているWeb APIとその関数紹介
   - デモ
   - コード紹介
   - VueUseを使う利点
 - おわりに
+
+<!--
+それでは、VueUseとはに移っていきます
+-->
 
 ---
 layout: common-page-has-image
@@ -359,19 +431,26 @@ layout: common-page-has-image
   }
 </style>
 
+<!--
+VueUseとは、Collection of Vue Composition Utilities（ゆっくり話す）、つまりコンポーザブルなユーティリティのコレクションです。
+主にリアクティブなrefを返すコンポーザブル関数を提供しています。
+命名規則は慣例に則ってuseほにゃららが主となっています。
+今お見せしているスライドを作成したツールSlidevでも、@vueuse/motionなどが使われています
+-->
+
 ---
 layout: common-page
 ---
 
 # VueUseの利点
 
-- **Feature Rich**🎛 : 200以上の関数を選べる
-- **Seamless migration**🚀 : vue-demiをつかっているのでVue2, 3どちらでも動く（一部の関数に例外あり）
+- **Feature Rich**🎛 : 200以上の関数が選べる
+- **Seamless migration**🚀 : Vue3と2で使えます
 - **Fully tree shakeable**⚡ : パッケージから必要なコードのみを手に入れる
 - **Type Strong**🦾 : TypeScriptで書かれ、完全なTSドキュメント付き
 - **No bundler required**☁️ : CDNで使える
 - **Interactive demos**🎪 : インタラクティブなデモも付き
-- **Add-ons**🔌 : Router、Firebase、RxJSなど様々なアドオンをサポート。
+- **Add-ons**🔌 : Router、Firebase、RxJSなど様々なアドオンをサポート
 
 ...etc
 
@@ -384,6 +463,10 @@ layout: common-page
     color: #41B883;
   }
 </style>
+
+<!--
+VueUseの利点としては、200以上の関数が選べることと、vue-demiというライブラリが使われているので一部関数を除きVue3、2どちらの環境でも使えること、Tree Shakableなのでほしいコードのみを手に入れることが出来ること、多彩なデモが公式サイトで見れることなどがあります。
+-->
 
 ---
 transition: slide-left
@@ -414,13 +497,17 @@ p {
 }
 </style>
 
+<!--
+VueUseは4月頃にv10.0がリリースされています。今回は、v10.0で新しく追加された関数も紹介していきますので、お楽しみにしていてください。
+-->
+
 ---
 layout: index-page
 ---
 
 # アジェンダ
 
-- このスライドの説明
+- 今日伝えたいこと
 - VueUseとは
 - **VueUseで扱われているWeb APIとその関数紹介**
   - デモ
@@ -428,29 +515,33 @@ layout: index-page
   - VueUseを使う利点
 - おわりに
 
+<!--
+それでは、VueUseで扱われているWeb APIとその関数紹介に移っていきます。
+-->
+
 ---
 layout: common-page
 ---
 
 # VueUseで扱われているWeb API（調べた限り）
 
-- Web Bluetooth API ★ <span>Bluetooth通信</span>
-- BroadcastChannel API <span>同じオリジンの閲覧コンテキスト通信</span>
-- Clipboard API <span>クリップボード</span>
-- EyeDropper API <span>スポイトツール</span>
-- FileSystemAccessAPI <span>ローカルデバイス上のファイルなどを操作</span>
-- Fullscreen API <span>フルスクリーン</span>
-- Gamepad API <span>ゲームパッド</span>
-- Permissions API <span>パーミッション</span>
-- Screen Orientation API <span>現在の画面の向き</span>
-- Web Share API <span>任意の共有ターゲットにコンテンツを共有する</span>
-- Vibration API <span>振動させる</span>
-- Screen Wake Lock API <span>端末が暗くならない</span>
-- Battery Status API ★ <span>バッテリーステータス</span>
-- Geolocation API <span>位置情報</span>
-- SpeechRecognition <span>音声認識</span>
-- SpeechSynthesis <span>合成音声</span>
-- Web Animations API ★ <span>アニメーション</span>
+- <span class="color">Web Bluetooth API ★</span> <span class="note">Bluetooth通信</span>
+- BroadcastChannel API <span class="note">同じオリジンの閲覧コンテキスト通信</span>
+- Clipboard API <span class="note">クリップボード</span>
+- EyeDropper API <span class="note">スポイトツール</span>
+- FileSystemAccessAPI <span class="note">ローカルデバイス上のファイルなどを操作</span>
+- Fullscreen API <span class="note">フルスクリーン</span>
+- Gamepad API <span class="note">ゲームパッド</span>
+- Permissions API <span class="note">パーミッション</span>
+- Screen Orientation API <span class="note">現在の画面の向き</span>
+- Web Share API <span class="note">>任意の共有ターゲットにコンテンツを共有する</span>
+- Vibration API <span class="note">振動させる</span>
+- Screen Wake Lock API <span class="note">端末が暗くならない</span>
+- <span class="color">Battery Status API ★</span> <span class="note">バッテリーステータス</span>
+- Geolocation API <span class="note">位置情報</span>
+- SpeechRecognition <span class="note">音声認識</span>
+- SpeechSynthesis <span class="note">合成音声</span>
+- <span class="color">Web Animations API ★</span> <span class="note">アニメーション</span>
 
 <style>
   ul {
@@ -465,13 +556,17 @@ layout: common-page
     font-size: 1.5rem;
   }
 
-  li span {
+  li span.note {
     display: block;
-    color: black;
+    color: inherit;
     font-size: 0.8rem;
     text-indent: 0;
   }
 </style>
+
+<!--
+VueUseで扱われている関数は調べた限りではこれくらいあります。今回は、この中で星マークをつけているものをピックアップして紹介していきます。
+-->
 
 ---
 ---
@@ -502,6 +597,10 @@ layout: common-page
   }
 </style>
 
+<!--
+それでは、useBluetoothの紹介です。
+-->
+
 ---
 layout: common-page
 ---
@@ -529,17 +628,18 @@ layout: common-page
     <th>Parameter</th>
     <td>requestDevice()のオプションのfilters, optionalServices, acceptAllDevicesを受け取る<br>(カスタムのnavigatorインスタンスを渡すことも可)</td>
   </tr>
-  <tr>
-    <th>Object</th>
-    <td>navigator.bluetooth</td>
-  </tr>
 </table>
+
+<!--
+useBluetoothはWeb Bluetooth APIを扱う関数です。Web Bluetooth APIは、Bluetooth Low EnergyというBluetooth4.0で追加された規格の機器に接続するAPIです。
+サポートしてはChromeとEdgeがPartial Support、Android ChromeがFull supportです。
+-->
 
 ---
 layout: common-page-code
 ---
 
-# Usage
+# 使い方
 
 ```ts
 import { useBluetooth } from '@vueuse/core'
@@ -555,6 +655,12 @@ const {
   acceptAllDevices: true,
 })
 ```
+
+<!--
+使い方としてはこのようになっています。
+Web Bluetooth APIがサポートされているかどうかの変数や、接続されているか、デバイスオブジェクト、サーバーオブジェクトなどが返却されます。
+useBluetoothの引数には、基本的にnavigator?.bluetooth.requestDeviceにわたすオプションと同様のものをわたします。
+-->
 
 ---
 layout: common-page
@@ -572,6 +678,11 @@ layout: common-page
     font-size: 1.6rem;
   }
 </style>
+
+<!--
+活用例としてはこのようになっています。
+Qiitaにかなり記事がありますので、興味のある方は是非記事検索してみてください。
+-->
 
 ---
 ---
@@ -594,6 +705,10 @@ layout: common-page
   }
 </style>
 
+<!--
+みなさま、お気づきでしょうか
+-->
+
 ---
 ---
 
@@ -613,6 +728,11 @@ layout: common-page
     font-weight: 700;
   }
 </style>
+
+<!--
+こちら気になっていましたでしょうか。
+はい、お察しの方もいらっしゃるかもしれませんが、こちら、セキュリティの観点から事前にペア設定していましたが、私の左腕につけている心拍センサーから心拍数を取っています。こちらで表示非表示できるのですが、はい、私の心拍数が表示されています。これで私の緊張感をみなさんに共有できますね。なんだか海外のRTA走者になった気分ですね。
+-->
 
 ---
 ---
@@ -634,6 +754,10 @@ layout: common-page
   }
 </style>
 
+<!--
+それでは、心拍数を表示する配信者スタイルでこれからお届けします。
+-->
+
 ---
 layout: common-page-code
 ---
@@ -644,7 +768,8 @@ layout: common-page-code
 import { pausableWatch, useBluetooth } from '@vueuse/core'
 import { ref } from 'vue';
 
-...
+const heartRateValue = ref<undefined | number>(0)
+const isGettingHeartRate = ref(false)
 
 const {
   isConnected,
@@ -657,15 +782,15 @@ const {
     'heart_rate'
   ],
 })
-
+...
 ```
 
 <style>
-  .slidev-code {
-    height: 60vh !important;
-    overflow-y: scroll;
-  }
 </style>
+
+<!--
+実際のコードはこのような感じになっています。まずはuseBluetoothの呼び出しですが、デバイスを限定しない書き方にしています。
+-->
 
 ---
 layout: common-page-code
@@ -699,6 +824,12 @@ const getHeartRate = async () => {
   }
 </style>
 
+<!--
+getHeartRateという関数で、serverオブジェクトからの操作を行います。
+このあたりの操作に関しては、useBluetoothを使っても簡略化されない部分ですね。
+characteristicvaluechangedのEventのListenerを登録して、変更値を受け取ったら心拍数が更新されるようになっています。
+-->
+
 ---
 layout: common-page-code
 ---
@@ -707,6 +838,7 @@ layout: common-page-code
 
 ```ts
 ...
+// 返り値としてstop（watchを止める関数）を得られるVueUseの関数
 const { stop } = pausableWatch(isConnected, (newIsConnected) => {
   if (!newIsConnected || !server.value || isGettingHeartRate.value) return
   getHeartRate()
@@ -716,6 +848,210 @@ const { stop } = pausableWatch(isConnected, (newIsConnected) => {
 ...テンプレートとスタイルの記述が続く
 ```
 
+<!--
+ここでVueUseのpausableWatchというのが出てきます。これはwatchの返り値として、stop, pause, resumeを受け取ります。この場合は、isConnectedが新しくtrueになった場合に、getHeartRateを呼び出し、watchを止めています。
+-->
+
+---
+layout: common-page-code
+---
+
+# VueUse本体のコード
+
+```ts
+...
+watch(device, () => {
+  connectToBluetoothGATTServer()
+})
+
+async function requestDevice(): Promise<void> {
+  ...
+  try {
+    device.value = await navigator?.bluetooth.requestDevice({
+      acceptAllDevices,
+      filters,
+      optionalServices,
+    })
+  }
+  catch (err) {
+    error.value = err
+  }
+}
+```
+
+<!--
+VueUse本体のコードです。デバイスをwatchしてBluetoothのサーバーと接続する関数を実行します。
+navigator.bluetooth.requestDeviceをtryで行い、エラーの場合エラーオブジェクトを後ほど返します。
+-->
+
+---
+layout: common-page-code
+---
+
+# VueUse本体のコード
+
+```ts
+...
+async function connectToBluetoothGATTServer() {
+  // Reset any errors we currently have:
+  error.value = null
+
+  if (device.value && device.value.gatt) {
+    // Add callback to gattserverdisconnected event:
+    device.value.addEventListener('gattserverdisconnected', () => {})
+
+    try {
+      // Connect to the device:
+      server.value = await device.value.gatt.connect()
+    }
+    catch (err) {
+      error.value = err
+    }
+  }
+}
+```
+
+<!--
+deviceのwatchから呼んでいた関数はこちらです。
+ここでserverオブジェクトを返却用のrefに代入しています。
+-->
+---
+layout: common-page-code
+---
+
+# VueUse本体のコード
+
+```ts
+...
+// 安全なonMounted。コンポーネントのライフサイクルの中にある場合はonMounted()を呼び出します
+tryOnMounted(() => {
+  if (device.value)
+    device.value.gatt?.connect()
+})
+
+// 安全な onScopeDispose。エフェクト・スコープのライフサイクルの中にあればonScopeDispose()を呼び出す。
+tryOnScopeDispose(() => {
+  if (device.value)
+    device.value.gatt?.disconnect()
+})
+...
+```
+
+<!--
+ここでtryOnMountedとtryOnScopeDisposeが出てきます。これもVueUseの関数です。
+tryOnMountedはコンポーネントのライフサイクルの中にある場合はonMounted()はを呼び出します。
+tryOnScopeDisposeはエフェクト・スコープのライフサイクルの中にあればonScopeDispose()を呼び出します。
+これを見ると、マウント時に接続、アンマウント時に切断をしてくれているようですね。
+-->
+
+---
+layout: common-page-code
+---
+
+# 素で書こうとするとこれくらいの複雑さ
+
+```ts
+var bluetoothDevice;
+var batteryLevelCharacteristic;
+
+async function onReadBatteryLevelButtonClick() {
+  try {
+    if (!bluetoothDevice) {
+      await requestDevice();
+    }
+    await connectDeviceAndCacheCharacteristics();
+
+    log('Reading Battery Level...');
+    await batteryLevelCharacteristic.readValue();
+  } catch(error) {
+    log('Argh! ' + error);
+  }
+}
+
+async function requestDevice() {
+  log('Requesting any Bluetooth Device...');
+  bluetoothDevice = await navigator.bluetooth.requestDevice({
+   // filters: [...] <- Prefer filters to save energy & show relevant devices.
+      acceptAllDevices: true,
+      optionalServices: ['battery_service']});
+  bluetoothDevice.addEventListener('gattserverdisconnected', onDisconnected);
+}
+
+async function connectDeviceAndCacheCharacteristics() {
+  if (bluetoothDevice.gatt.connected && batteryLevelCharacteristic) {
+    return;
+  }
+
+  log('Connecting to GATT Server...');
+  const server = await bluetoothDevice.gatt.connect();
+
+  log('Getting Battery Service...');
+  const service = await server.getPrimaryService('battery_service');
+
+  log('Getting Battery Level Characteristic...');
+  batteryLevelCharacteristic = await service.getCharacteristic('battery_level');
+
+  batteryLevelCharacteristic.addEventListener('characteristicvaluechanged',
+      handleBatteryLevelChanged);
+  document.querySelector('#startNotifications').disabled = false;
+  document.querySelector('#stopNotifications').disabled = true;
+}
+
+/* This function will be called when `readValue` resolves and
+ * characteristic value changes since `characteristicvaluechanged` event
+ * listener has been added. */
+function handleBatteryLevelChanged(event) {
+  let batteryLevel = event.target.value.getUint8(0);
+  log('> Battery Level is ' + batteryLevel + '%');
+}
+
+async function onStartNotificationsButtonClick() {
+  try {
+    log('Starting Battery Level Notifications...');
+    await batteryLevelCharacteristic.startNotifications();
+
+    log('> Notifications started');
+    document.querySelector('#startNotifications').disabled = true;
+    document.querySelector('#stopNotifications').disabled = false;
+  } catch(error) {
+    log('Argh! ' + error);
+  }
+}
+
+async function onStopNotificationsButtonClick() {
+  try {
+    log('Stopping Battery Level Notifications...');
+    await batteryLevelCharacteristic.stopNotifications();
+
+    log('> Notifications stopped');
+    document.querySelector('#startNotifications').disabled = false;
+    document.querySelector('#stopNotifications').disabled = true;
+  } catch(error) {
+    log('Argh! ' + error);
+  }
+}
+
+function onResetButtonClick() {
+  if (batteryLevelCharacteristic) {
+    batteryLevelCharacteristic.removeEventListener('characteristicvaluechanged',
+        handleBatteryLevelChanged);
+    batteryLevelCharacteristic = null;
+  }
+  // Note that it doesn't disconnect device.
+  bluetoothDevice = null;
+  log('> Bluetooth Device reset');
+}
+
+async function onDisconnected() {
+  log('> Bluetooth Device disconnected');
+  try {
+    await connectDeviceAndCacheCharacteristics()
+  } catch(error) {
+    log('Argh! ' + error);
+  }
+}
+```
+
 <style>
   .slidev-code {
     height: 60vh !important;
@@ -723,16 +1059,18 @@ const { stop } = pausableWatch(isConnected, (newIsConnected) => {
   }
 </style>
 
+<!--
+素で使おうとするとこれくらい複雑です。これに加えてアンマウントの処理をいれなければなりません。
+-->
 
 ---
 layout: common-page
 ---
 
-# VueUseで扱う利点とサマリ
+# VueUseで扱う利点とまとめ
 
 - マウント時に接続、アンマウント時に切断を請け負ってくれる
 - isSupportedとエラーオブジェクトの返却
-- （全関数共通として）コンポーネント側はシンプルになる
 
 https://googlechrome.github.io/samples/web-bluetooth/index.html  
 にサンプルが色々あり、これをVue（VueUse）に直して見るだけでもアウトプットになりそう👀
@@ -743,6 +1081,16 @@ https://googlechrome.github.io/samples/web-bluetooth/index.html
     font-weight: 400;
   }
 </style>
+
+<!--
+VueUseで扱う利点とまとめです。
+
+マウント時に接続、アンマウント時に切断を請け負ってくれます
+isSupportedとエラーオブジェクトの返却
+
+https://googlechrome.github.io/samples/web-bluetooth/index.html  
+にサンプルが色々あり、これをVue（VueUse）に直して見るだけでもアウトプットになりそうかなと思っています👀
+-->
 
 ---
 ---
@@ -773,6 +1121,10 @@ https://googlechrome.github.io/samples/web-bluetooth/index.html
   }
 </style>
 
+<!--
+次は、useBatteryの紹介です
+-->
+
 ---
 layout: common-page
 ---
@@ -800,17 +1152,18 @@ layout: common-page
     <th>Parameter</th>
     <td>カスタムのnavigatorインスタンスを渡すことが出来る</td>
   </tr>
-  <tr>
-    <th>Object</th>
-    <td>navigator.getBattery</td>
-  </tr>
 </table>
+
+<!--
+useBatteryはBattery Status APIを扱います。Battery Status APIはバッテリーの充電レベルに関する情報の提供を行います。
+ChromeとEdgeとAndroid ChromeがFull supportとなっています。
+-->
 
 ---
 layout: common-page-code
 ---
 
-# Usage
+# 使い方
 
 ```ts
 import { useBattery } from '@vueuse/core'
@@ -831,10 +1184,14 @@ const {
   }
 </style>
 
+<!--
+使い方としてはこのようになっています。
+各充電レベルに関する情報がリアクティブに受け取れます。
+-->
+
 ---
 ---
 
-作ってみよう：  
 充電レベルに応じて変わる絵🖼
 
 <style>
@@ -852,6 +1209,10 @@ const {
   }
 </style>
 
+<!--
+一つ、作ってみたということで、充電レベルに応じて変わる絵になります。
+-->
+
 ---
 ---
 
@@ -862,6 +1223,11 @@ const {
   padding-top: 1rem;
 }
 </style>
+
+<!--
+こちらがその実際のライブデモです。
+充電中かどうか、充電レベルの数値、完全に充電されるまでの秒数、完全に放電されるまでの時間を取得しています。充電されているかどうかでも絵が変わります。Chrome系でデモのURLをご覧になっている方は、是非どんな景色が広がっていたのか教えてください。
+-->
 
 ---
 layout: common-page-code
@@ -880,11 +1246,10 @@ const counter = useInterval(1500) // ミリ秒ごとにカウントアップ
 ...続く
 ```
 
-<style>
-  .slidev-code {
-    height: 60vh !important;
-  }
-</style>
+<!--
+こちらのコードはこのようになります。まずはuseBatteryを呼び出します。
+useIntervalというVueUseの関数を使っていて、こちらは引数のミリ秒ごとにカウントアップして、これを交互にpng画像を切り替えるのに使っています。
+-->
 
 ---
 layout: common-page-code
@@ -919,15 +1284,20 @@ const interpolateColor = (color1: string, color2: string, ratio: number) => {
 
 <style>
   .slidev-code {
-    height: 60vh !important;
+    height: 65vh !important;
   }
 </style>
+
+<!--
+充電レベルからの色変換はChatGPTにコードを考えてもらいました。グラデーションを作りたい2つのカラーコードと、充電レベルをわたします。
+少しスクロールしますね。
+-->
 
 ---
 layout: common-page-code
 ---
 
-# こちらのコード(2/3)
+# こちらのコード(3/3)
 
 ```ts
 ...
@@ -948,22 +1318,110 @@ const batteryLevel = computed(() => battery.level * 100)
 const baseColor = computed(() => getSkyColor(batteryLevel.value))
 ```
 
+<!--
+これを各computedで計算します。
+バッテリーレベルに関しては、使いやすいように100をかけています。
+-->
+
+---
+layout: common-page-code
+---
+
+# VueUse本体のコード
+
+```ts
+...（export function useBatteryの中身）
+  function updateBatteryInfo(this: BatteryManager) {
+    charging.value = this.charging
+    chargingTime.value = this.chargingTime || 0
+    dischargingTime.value = this.dischargingTime || 0
+    level.value = this.level
+  }
+
+  if (isSupported.value) {
+    (navigator as NavigatorWithBattery)
+      .getBattery()
+      .then((_battery) => {
+        battery = _battery
+        updateBatteryInfo.call(battery)
+        for (const event of events)
+          useEventListener(battery, event, updateBatteryInfo, { passive: true })
+      })
+  }
+...
+```
+
+<!--
+VueUse本体のコードです。
+useBatteryの中には、updateBatteryInfoという値をリアクティブに更新する関数と、それらをuseEventListenerをつかって設定しています。useEventListenerはVueUse頻出の関数で、マウント時にaddEventListener、アンマウント時にremoveEventListenerを自動でしてくれます。VueUse全体として、マウント時とアンマウント時のやりくりを請け負ってくれるのが特徴ですね。
+-->
+
+---
+layout: common-page-code
+---
+
+# 素で書こうとするとこれくらいの複雑さ
+
+```ts
+navigator.getBattery().then((battery) => {
+  function updateAllBatteryInfo() {
+    updateChargeInfo();
+    updateLevelInfo();
+    updateChargingInfo();
+    updateDischargingInfo();
+  }
+  updateAllBatteryInfo();
+
+  battery.addEventListener("chargingchange", () => {
+    updateChargeInfo();
+  });
+  function updateChargeInfo() {
+    console.log(`Battery charging? ${battery.charging ? "Yes" : "No"}`);
+  }
+
+  battery.addEventListener("levelchange", () => {
+    updateLevelInfo();
+  });
+  function updateLevelInfo() {
+    console.log(`Battery level: ${battery.level * 100}%`);
+  }
+
+  battery.addEventListener("chargingtimechange", () => {
+    updateChargingInfo();
+  });
+  function updateChargingInfo() {
+    console.log(`Battery charging time: ${battery.chargingTime} seconds`);
+  }
+
+  battery.addEventListener("dischargingtimechange", () => {
+    updateDischargingInfo();
+  });
+  function updateDischargingInfo() {
+    console.log(`Battery discharging time: ${battery.dischargingTime} seconds`);
+  }
+});
+```
+
 <style>
   .slidev-code {
-    height: 60vh !important;
+    height: 62vh !important;
   }
 </style>
 
+<!--
+素で書くとMDNのサンプルコードはこんな感じです。
+各イベントに対してaddEventListenerを使用しないといけなく、また、アンマウント時が考慮されていない形になります。VueUseはここをfor of文で一気にuseEventListenerします。
+-->
 
 ---
 layout: common-page
 ---
 
-# VueUSeの利点とサマリ
+# VueUseで扱う利点とまとめ
 
 - 値がリアクティブでUIの更新がしやすい
 - 内部的にVueUseのuseEventListenerを使っているのでアンマウント時にListenerを解除
-- （全関数共通として）コンポーネント側はシンプルになる
+- 各イベントへのEventListenerの登録をしなくてよい
 
 Chromiumでしか使えないのは難点ですが、バッテリーレベルに応じてダークモードにするなどに使っていけるかもしれません
 
@@ -973,6 +1431,13 @@ Chromiumでしか使えないのは難点ですが、バッテリーレベルに
     font-weight: 400;
   }
 </style>
+
+<!--
+VueUseで扱う利点とまとめはこのようになります。
+値がリアクティブなこと、useEventListenerで各イベントに一気に登録するので楽なのと、アンマウントを気にしなくていいところでしょうか。
+
+Chromiumでしか使えないのは難点ですが、バッテリーレベルに応じてダークモードにするなどに使っていけるかもしれません
+-->
 
 ---
 ---
@@ -1003,6 +1468,10 @@ Chromiumでしか使えないのは難点ですが、バッテリーレベルに
   }
 </style>
 
+<!--
+次はuseAnimateです
+-->
+
 ---
 layout: common-page
 ---
@@ -1026,10 +1495,6 @@ layout: common-page
     <th>Support</th>
     <td>PCモダンブラウザとChrome for AndroidはFull Support、 Safari on iOSはcomposite modeがサポートされていない</td>
   </tr>
-  <tr>
-    <th>Object</th>
-    <td>Element.animate</td>
-  </tr>
 </table>
 
 <style>
@@ -1039,11 +1504,15 @@ layout: common-page
   }
 </style>
 
+<!--
+useAnimateはWeb Animations APIを扱うものです。Web Animations APIは、CSSアニメーションのようなキーフレームに加え、再生、停止などを行うことができます。
+-->
+
 ---
 layout: common-page-code
 ---
 
-# Usage
+# 使い方
 
 ```ts
 const el = ref()
@@ -1074,6 +1543,11 @@ const {
     font-size: 0.8rem !important;
   }
 </style>
+
+<!--
+使い方としてはこのような感じです。
+こちらの返り値は、isSupported以外は、すべて通常のWeb Animation APIで得られるものと同様になっています。
+-->
 
 ---
 ---
@@ -1128,18 +1602,188 @@ const {
   }
 </style>
 
+<!--
+こちらのコードです。
+こちらは完全に、useAnimateの呼び出しのみを行っています。すごくシンプルですね。少しゆっくりスクロールします。
+-->
+
+---
+layout: common-page-code
+---
+
+# VueUse本体のコード
+
+```ts
+export function useAnimate(
+  target: MaybeComputedElementRef,
+  keyframes: UseAnimateKeyframes,
+  options?: number | UseAnimateOptions,
+): UseAnimateReturn {
+  let config: UseAnimateOptions
+  let animateOptions: undefined | number | KeyframeAnimationOptions
+
+  if (isObject(options)) {
+    config = options
+    animateOptions = objectOmit(options, ['window', 'immediate', 'commitStyles', 'persist', 'onReady', 'onError'])
+  }
+  else {
+    config = { duration: options }
+    animateOptions = options
+  }
+```
+
+<style>
+  .slidev-code {
+    height: 60vh !important;
+  }
+</style>
+
+<!--
+VueUse本体のコードです。素のWeb Animation APIでも、オプション引数がオブジェクトでなく数値だった場合、durationとなるので、そちらが処理されているのがわかります。
+-->
+
+---
+layout: common-page-code
+---
+
+# VueUse本体のコード
+
+```ts
+...
+// requestAnimationFrameごとに関数を呼び出す。一時停止と再開のコントロール付き
+const { resume: resumeRef, pause: pauseRef } = useRafFn(() => {
+    if (!animate.value) return
+    store.pending = animate.value.pending
+    store.playState = animate.value.playState
+    store.replaceState = animate.value.replaceState
+    store.startTime = animate.value.startTime
+    store.currentTime = animate.value.currentTime
+    store.timeline = animate.value.timeline
+    store.playbackRate = animate.value.playbackRate
+  }, { immediate: false })
+
+function syncResume() {
+    if (isSupported.value)
+      resumeRef()
+  }
+
+function syncPause() {
+  if (isSupported.value && window)
+    window.requestAnimationFrame(pauseRef)
+}
+```
+
+<style>
+  .slidev-code {
+    height: 60vh !important;
+  }
+</style>
+
+<!--
+useAnimateの中ではuseRafFnというのを使っています。こちらはrequestAnimationFrameごとに関数を呼び出すもので、返り値で一時停止と再開のコントロールを受け取ります。
+syncResumeはアニメーションを継続し、syncPauseはpauseRefの中でcancelAnimationFrameします。
+-->
+
+---
+layout: common-page-code
+---
+
+# VueUse本体のコード
+
+```ts
+...
+  const play = () => {
+    if (animate.value) {
+      try {
+        animate.value.play()
+        syncResume()
+      }
+      catch (e) {
+        syncPause()
+        onError(e)
+      }
+    }
+    else {
+      update()
+    }
+  }
+```
+
+<style>
+  .slidev-code {
+    height: 60vh !important;
+  }
+</style>
+
+<!--
+その関数たちを、実際に返り値として渡すplay関数などで処理するようになっています。pauseやcancelなどもこれと大体同様のコードになっています。
+-->
+
+---
+layout: common-page-code
+---
+
+# VueUse本体のコード
+
+```ts
+...
+// 安全なonMounted。コンポーネントのライフサイクルの中にある場合はonMounted()を呼び出します
+tryOnMounted(() => {
+  nextTick(() => update(true))
+})
+
+// 安全な onScopeDispose。エフェクト・スコープのライフサイクルの中にあればonScopeDispose()を呼び出す。
+tryOnScopeDispose(cancel)
+...
+```
+
+<!--
+ここでもtryOnMountedとtryOnScopeDisposeが使われています。本当にVueUseはマウントとアンマウントを気にかけてくれているのがわかりますね。
+-->
+
+---
+layout: common-page-code
+---
+
+# 素で書こうとするとこんな感じ
+
+```ts
+const nommingCake = document
+  .getElementById("eat-me_sprite")
+  .animate(
+    [{ transform: "translateY(0)" }, { transform: "translateY(-80%)" }],
+    {
+      fill: "forwards",
+      easing: "steps(4, end)",
+      duration: aliceChange.effect.getComputedTiming().duration / 2,
+    }
+  );
+
+nommingCake.pause();
+nommingCake.playbackRate
+```
+
+<style>
+  .slidev-code {
+    height: 60vh !important;
+  }
+</style>
+
+<!--
+素で書こうとするとこのような感じです。毎回オブジェクトからメソッドやプロパティの呼び出しを行うので、これがコンポーザブル関数の返り値としてそれぞれ返ってくるならすごくシンプルですね。
+-->
+
 ---
 layout: common-page
 ---
 
-# VueUSeの利点とサマリ
+# VueUseで扱う利点とまとめ
 
 - 値がリアクティブでUIの更新がしやすい
 - isSupported
 - マウント時に再設定、アンマウント時にキャンセルを行う
-- （全関数共通として）コンポーネント側はシンプルになる
 
-Chromiumでしか使えないのは難点ですが、バッテリーレベルに応じてダークモードにするなどに使っていけるかもしれません
+コンポーザブル関数の呼び出しだけでstateと制御メソッドが得られるので便利
 
 <style>
   p {
@@ -1148,19 +1792,33 @@ Chromiumでしか使えないのは難点ですが、バッテリーレベルに
   }
 </style>
 
+<!--
+VueUseで扱う利点とまとめです。
+値がリアクティブでUIの更新がしやすいのはもちろん、関数呼び出しのみで色々な値がシンプルに受け取れるのはいいと思います。
+-->
+
 ---
 layout: common-page
 ---
 
 # 他にも関数はたくさん！
 
-- Web API関連の他にも、Event関連や様々なAdd-onもあるので是非みなさんも使ってください🤗
-  - @vueuse/gesture, @vueuse/sound ...etc
-- VueUseはコンポーザブル関数の集まりなので、関数1ファイルで結構把握出来るのでちょっとしたOSSコードリーディングにもおすすめ
-  - ただ、現在新しい関数の受け付けはスローダウンしているようなので、コントリビューションは気をつけよう
+- Web API関連の他にも、Event関連や様々なAdd-onがあります🤗
+  - ゲーム作るなら
+    - @vueuse/gesture, @vueuse/sound, useDeviceMotion, useFullscreen ...etc
+  - UI作るなら
+    - useDraggable, useInfiniteScroll
+
+...etc
+
+<!--
+他にも関数はたくさんあります！
+ゲーム作るなら@vueuse/gesture, @vueuse/soundあたりがすごく使えるのかなと思っています。
+UI作るなら、でいうと挙げきれないのですが、useDraggable, useInfiniteScrollあたりは便利だと思っています。
+-->
 
 ---
-layout: common-page-has-image
+layout: common-page
 ---
 
 # まとめ
@@ -1168,10 +1826,20 @@ layout: common-page-has-image
 - VueUseの関数はアイデアの宝庫
 - VueUseを使ったことがない方にもちょっとでも興味をもってもらえると嬉しい
 - 実験的なWeb APIを扱ってくれているVueUseに感謝🙏
+- VueUseはコンポーザブル関数の集まりなので、関数1ファイルで結構把握出来るのでコードを読んだり、自作のコンポーザブル関数の参考にするなどおすすめ
+  - ただ、現在新しい関数の受け付けはスローダウンしているようなので、コントリビューションは気をつけよう
 
-![うりぼうくん](/uribou_nemuri.png)
+<!--
+まとめです
+VueUseの関数はアイデアを与えてくれます。
+VueUseを使ったこと無い方にもちょっとでも興味持ってもらえたら嬉しいと思います！
+VueUseはコンポーザブル関数の集まりなので、ちょっとコードを読むのもやりやすいですし、自作のコンポーザブル関数の参考にするのもおすすめです。ただし、現在新しい関数の受付はスローダウンしているようなので、コントリビューションする時は気をつけましょう。
+-->
 
 ---
+layout: end
 ---
 
-![おわり](/end.png)
+<!--
+終わりです、ご清聴ありがとうございました！
+-->

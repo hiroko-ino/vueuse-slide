@@ -23,20 +23,18 @@
     content: "";
     width: 1.5rem;
     height: 3px;
-    background-color: #333;
+    background-color: #ddd;
     position: relative;
     top: 2px;
     margin-right: 0.5rem;
   }
 
   ::v-deep(.slidev-code-wrapper) {
-    margin-left: 2.2rem !important;
+    margin-left: 1.2rem !important;
     margin-top: 1rem !important;
   }
 
   ::v-deep(.slidev-code) {
-    background-color: #eee !important;
-    padding: 1rem !important;
     font-size: 1rem !important;
     line-height: 1.5 !important;
   }

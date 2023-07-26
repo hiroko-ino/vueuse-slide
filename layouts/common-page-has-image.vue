@@ -30,7 +30,7 @@
     content: "";
     width: 1.5rem;
     height: 3px;
-    background-color: #333;
+    background-color: #ddd;
     position: relative;
     top: 2px;
     margin-right: 0.5rem;

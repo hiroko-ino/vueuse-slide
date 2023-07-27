@@ -1071,7 +1071,7 @@ layout: common-page
 
 # VueUseで扱う利点とまとめ
 
-- マウント時に接続、アンマウント時に切断を請け負ってくれる
+- マウント時に接続、エフェクトスコープ破棄時に切断を請け負ってくれる
 - isSupportedとエラーオブジェクトの返却
 
 https://googlechrome.github.io/samples/web-bluetooth/index.html  
@@ -1790,7 +1790,7 @@ layout: common-page
 
 - 値がリアクティブでUIの更新がしやすい
 - isSupported
-- マウント時に再設定、アンマウント時にキャンセルを行う
+- マウント時に再設定、エフェクトスコープ破棄時にキャンセルを行う
 
 コンポーザブル関数の呼び出しだけでstateと制御メソッドが得られるので便利
 

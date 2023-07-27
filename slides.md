@@ -53,7 +53,7 @@ transition: slide-left
 <ul class="common-list">
   <li>9年間Web制作でデザイナーとエンジニアをし、昨年8月転職してスポーツアプリの会社でVue.jsとFlutterを書いている</li>
   <li>湘南に生息</li>
-  <li>3度の飯よりゲームのRTA（Speedrun）が好き</li>
+  <li>VueUseとSlidevが好き</li>
 </ul>
 
 <ul class="sns-list">
@@ -187,7 +187,7 @@ p {
 猪野と申します、SNS類は本名そのままのhiroko_inoという名前でやっています。
 9年間web制作でデザイナーとエンジニアをやっていて、去年8月に転職して今はスポーツアプリの会社でVue.jsとFlutterを書いています。
 湘南に生息しています。
-3度の飯よりRTA（speedrun）が好きです。
+VueUseとSlidevが好きです。
 -->
 
 ---
@@ -281,9 +281,9 @@ layout: common-page
 
 # 今日の内容は、VueUse × Web API
 
-- VueUseの関数から様々な（実験的含む）Web APIの存在を知ろう    
-- VueUseの実際のコードや、内部で扱われている関数、便利さを理解する
-- Slidev上のデモを楽しむ
+- VueUseの関数から様々な（実験的含む）Web APIの存在を知ろう 
+- Slidev上でデモし、デモのコードを公開します
+- VueUseの実際のコードや、内部で扱われている関数、便利さを学びます
 
 今回はサードパーティ API（普段アプリケーション開発でサーバーから叩いているもの）の話はありません🙅‍♀🙇‍♀️
 

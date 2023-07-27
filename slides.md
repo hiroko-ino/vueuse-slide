@@ -298,6 +298,8 @@ layout: common-page
 
 VueUseのたくさんの関数の中から、実験的含むWeb APIを扱う関数をピックアップし、Web APIと内部で扱われている関数を速習します。
 
+Vueコンポーネントが使えるSlidev上でデモをします。
+
 今回は、サードパーティAPI、普段アプリケーション開発でサーバーから叩いているものの話はありません。
 -->
 
@@ -881,7 +883,7 @@ async function requestDevice(): Promise<void> {
 
 <!--
 VueUse本体のコードです。デバイスをwatchしてBluetoothのサーバーと接続する関数を実行します。
-navigator.bluetooth.requestDeviceをtryで行い、エラーの場合エラーオブジェクトを後ほど返します。
+navigator.bluetooth.requestDeviceをtryで行い、エラーの場合エラーオブジェクトを保存します。
 -->
 
 ---
@@ -1060,7 +1062,7 @@ async function onDisconnected() {
 </style>
 
 <!--
-素で使おうとするとこれくらい複雑です。これに加えてアンマウントの処理をいれなければなりません。
+サッと紹介するのですが、素で使おうとするとこれくらい複雑です。これに加えてアンマウントの処理をいれなければなりません。
 -->
 
 ---
@@ -1226,7 +1228,7 @@ const {
 
 <!--
 こちらがその実際のライブデモです。
-充電中かどうか、充電レベルの数値、完全に充電されるまでの秒数、完全に放電されるまでの時間を取得しています。充電されているかどうかでも絵が変わります。Chrome系でデモのURLをご覧になっている方は、是非どんな景色が広がっていたのか教えてください。
+充電中かどうか、充電レベルの数値、完全に充電されるまでの秒数、完全に放電されるまでの時間を取得しています。充電レベルに応じて空の色が変わるのと、充電されているかどうかでも絵が変わります。Chrome系でデモのURLをご覧になっている方は、是非どんな景色が広がっていたのか教えてください。
 -->
 
 ---
@@ -1284,7 +1286,7 @@ const interpolateColor = (color1: string, color2: string, ratio: number) => {
 
 <style>
   .slidev-code {
-    height: 65vh !important;
+    height: 60vh !important;
   }
 </style>
 
@@ -1353,7 +1355,7 @@ layout: common-page-code
 
 <!--
 VueUse本体のコードです。
-useBatteryの中には、updateBatteryInfoという値をリアクティブに更新する関数と、それらをuseEventListenerをつかって設定しています。useEventListenerはVueUse頻出の関数で、マウント時にaddEventListener、アンマウント時にremoveEventListenerを自動でしてくれます。VueUse全体として、マウント時とアンマウント時のやりくりを請け負ってくれるのが特徴ですね。
+useBatteryの中には、updateBatteryInfoという値をリアクティブに更新する関数があり、それらをuseEventListenerをつかって設定しています。useEventListenerはVueUse頻出の関数で、マウント時にaddEventListener、アンマウント時にremoveEventListenerを自動でしてくれます。VueUse全体として、マウント時とアンマウント時のやりくりを請け負ってくれるのが特徴ですね。
 -->
 
 ---
@@ -1404,7 +1406,7 @@ navigator.getBattery().then((battery) => {
 
 <style>
   .slidev-code {
-    height: 62vh !important;
+    height: 60vh !important;
   }
 </style>
 
@@ -1470,6 +1472,7 @@ Chromiumでしか使えないのは難点ですが、バッテリーレベルに
 
 <!--
 次はuseAnimateです
+こちらはv10.0で追加された関数です
 -->
 
 ---
@@ -1553,6 +1556,12 @@ const {
 ---
 
 <UseAnimate />
+
+<!--
+こちらのデモはこのようになっています。
+これはCSSのfilterで暗くした奥の絵と、靴だけを切り抜いたpng画像を重ねています。
+こちらのボタンで並んでいるように、再生、stop、逆再生などが行なえます。再生中の状態によって、stateが変わるのがご覧いただけると思います。
+-->
 
 ---
 layout: common-page-code
@@ -1825,7 +1834,7 @@ layout: common-page
 
 - VueUseの関数はアイデアの宝庫
 - VueUseを使ったことがない方にもちょっとでも興味をもってもらえると嬉しい
-- 実験的なWeb APIを扱ってくれているVueUseに感謝🙏
+- マウント時とアンマウント時を本当に気にしてくれてる
 - VueUseはコンポーザブル関数の集まりなので、関数1ファイルで結構把握出来るのでコードを読んだり、自作のコンポーザブル関数の参考にするなどおすすめ
   - ただ、現在新しい関数の受け付けはスローダウンしているようなので、コントリビューションは気をつけよう
 

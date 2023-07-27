@@ -11,7 +11,7 @@ fonts:
 
 # v10.0突破記念！<br>VueUseで手軽にWeb APIを<br>実験してみよう🥳
 
-## + デモ on Slidev
+## デモ on Slidev
 
 2023/07/27<br>@Vue.jsの勉強会はなんぼあってもいいですからね<br>hiroko_ino
 
@@ -279,11 +279,11 @@ VueUseはコンポーザブルな関数の集合です。
 layout: common-page
 ---
 
-# 今日の内容は、VueUse × Web API
+# 今日の内容は、Web APIを扱うVueUseの関数
  
 - VueUseの関数から様々な（実験的含む）Web APIを知ることが出来て楽しかった気持ちを共有したい   
 - Slidev上でデモし、デモのコードを公開します
-- VueUseの実際のコードや、内部で扱われている関数、便利さを学びます
+- VueUseの実際のコードや、内部で扱われている別のVueUseの関数、便利さを学びます
 
 今回はサードパーティ API（普段アプリケーション開発でサーバーから叩いているもの）の話はありません🙅‍♀🙇‍♀️
 
@@ -347,6 +347,7 @@ layout: common-page
 
 ---
 transition: slide-left
+layout: common-page
 ---
 
 # 本題の前に…
@@ -357,32 +358,10 @@ transition: slide-left
 <img class="mt-10 block m-auto" src="/qr.png" alt="QRコード">
 
 <style>
-.slidev-layout {
-  padding: 2rem 2rem 2rem 0;
-}
-
-h1 {
-  font-size: 2.8rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  line-height: 1;
-}
-
-h1::before {
-  content: "";
-  width: 1.5rem;
-  height: 3px;
-  background-color: #333;
-  position: relative;
-  top: 2px;
-  margin-right: 0.5rem;
-}
-
 p {
   padding-left: 2.2rem;
   font-size: 2rem;
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
   font-weight: 700;
 }
 </style>
@@ -861,7 +840,7 @@ layout: common-page-code
 # VueUse本体のコード
 
 ```ts
-...
+...(useBluetoothの中身)
 watch(device, () => {
   connectToBluetoothGATTServer()
 })

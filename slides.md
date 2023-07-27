@@ -281,7 +281,7 @@ layout: common-page
 
 # 今日の内容は、VueUse × Web API
  
-- VueUseの関数から様々な（実験的含む）Web APIを知ることが出来る   
+- VueUseの関数から様々な（実験的含む）Web APIを知ることが出来て楽しかった気持ちを共有したい   
 - Slidev上でデモし、デモのコードを公開します
 - VueUseの実際のコードや、内部で扱われている関数、便利さを学びます
 

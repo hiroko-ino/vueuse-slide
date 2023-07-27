@@ -1577,7 +1577,7 @@ layout: common-page-code
 
 # こちらのコード
 
-```ts {all}{ lines: true }
+```ts
 import { shallowRef } from 'vue'
 import { useAnimate, type MaybeElement } from '@vueuse/core'
 

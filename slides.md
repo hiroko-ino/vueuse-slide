@@ -821,7 +821,7 @@ const getHeartRate = async () => {
 
 <style>
   .slidev-code {
-    height: 60vh !important;
+    height: 52vh !important;
     overflow-y: scroll;
   }
 </style>
@@ -1064,7 +1064,7 @@ async function onDisconnected() {
 
 <style>
   .slidev-code {
-    height: 60vh !important;
+    height: 52vh !important;
     overflow-y: scroll;
   }
 </style>
@@ -1294,7 +1294,7 @@ const interpolateColor = (color1: string, color2: string, ratio: number) => {
 
 <style>
   .slidev-code {
-    height: 60vh !important;
+    height: 52vh !important;
   }
 </style>
 
@@ -1414,7 +1414,7 @@ navigator.getBattery().then((battery) => {
 
 <style>
   .slidev-code {
-    height: 60vh !important;
+    height: 52vh !important;
   }
 </style>
 
@@ -1615,7 +1615,7 @@ const {
 
 <style>
   .slidev-code {
-    height: 60vh !important;
+    height: 52vh !important;
   }
 </style>
 
@@ -1651,7 +1651,7 @@ export function useAnimate(
 
 <style>
   .slidev-code {
-    height: 60vh !important;
+    height: 52vh !important;
   }
 </style>
 
@@ -1692,7 +1692,7 @@ function syncPause() {
 
 <style>
   .slidev-code {
-    height: 60vh !important;
+    height: 52vh !important;
   }
 </style>
 
@@ -1728,7 +1728,7 @@ layout: common-page-code
 
 <style>
   .slidev-code {
-    height: 60vh !important;
+    height: 52vh !important;
   }
 </style>
 
@@ -1782,7 +1782,7 @@ nommingCake.playbackRate
 
 <style>
   .slidev-code {
-    height: 60vh !important;
+    height: 52vh !important;
   }
 </style>
 

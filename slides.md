@@ -939,12 +939,20 @@ tryOnScopeDispose(() => {
 ...
 ```
 
+各 Vue コンポーネントの setup() 関数はエフェクトスコープでも呼び出されるので、このメソッドは再利用可能なコンポジション関数において、コンポーネントに結合しない onUnmounted の代替として使用できます。<br>（onScopeDispose()のVue公式の説明）
+
 <!--
 ここでtryOnMountedとtryOnScopeDisposeが出てきます。これもVueUseの関数です。
 tryOnMountedはコンポーネントのライフサイクルの中にある場合はonMounted()はを呼び出します。
 tryOnScopeDisposeはエフェクト・スコープのライフサイクルの中にあればonScopeDispose()を呼び出します。
 これを見ると、マウント時に接続、アンマウント時に切断をしてくれているようですね。
 -->
+
+<style>
+  p {
+    margin-left:1.4rem;
+  }
+</style>
 
 ---
 layout: common-page-code
